@@ -83,18 +83,7 @@ namespace lab2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // if (File.Exists("..\\..\\threatsData.txt"))
-            // {
-            //     DeserializeDB();
-            // }
-            // else
-            // {
-            //     ParseDB();
-            //     updateTime = DateTime.Now;
-            //     SerializeDB();
-            // }
             dgLocal.ItemsSource = threatsData;
-            
         }
 
         private void dgLocal_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -245,7 +234,7 @@ namespace lab2
 
         private void ShowListBox()
         {
-            var w = new Window1(300,1); // на данный момент тут можно задать количество страниц
+            var w = new Window1(1000,1);
             w.Show();
             this.Close();
         }

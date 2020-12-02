@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab2"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Window1" Height="450" Width="800">
     <Grid>
         <ListBox x:Name="ListBox" Margin="10,30"/>
         <Button x:Name="Return" Content="Назад" Margin="0,6,10,0" Width="186" Height="19" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Return_Click"/>
-        <ComboBox x:Name ="ComboBox1" Margin="0,0,10,6" Height="19" VerticalAlignment="Bottom" SelectedIndex ="0" HorizontalAlignment="Right" Width="50" Tag="" SelectionChanged="ComboBox1_SelectionChanged" >
+        <ComboBox x:Name ="ComboBox1" Margin="0,0,10,6" Height="19" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="50" Tag="" SelectionChanged="ComboBox1_SelectionChanged" >
             <ComboBoxItem Content="15" HorizontalAlignment="Center" Width="40" Height="19"/>
             <ComboBoxItem Content="30" HorizontalAlignment="Center" Width="40" Height="19"/>
             <ComboBoxItem Content="45" HorizontalAlignment="Center" Width="40" Height="19"/>
         </ComboBox>
-        <TextBlock x:Name="TextBlock1" HorizontalAlignment="Left" Text ="Страница: 1"  Margin="10,0,0,6" TextWrapping="Wrap"  Width="80" Height="19" VerticalAlignment="Bottom" TextAlignment="Center"/>
+        <TextBox x:Name="TextBlock1" HorizontalAlignment="Left" Text ="1"  Margin="90,0,0,6" TextWrapping="Wrap"  Width="53" Height="19" VerticalAlignment="Bottom" TextAlignment="Center" TextChanged="TextBlock1_TextChanged"/>
+        <TextBlock x:Name="TextBlock2" HorizontalAlignment="Left"  Margin="10,0,0,6" TextWrapping="Wrap"  Width="94" Height="19" VerticalAlignment="Bottom" TextAlignment="Center" Text="Страница:"/>
 
     </Grid>
 </Window>

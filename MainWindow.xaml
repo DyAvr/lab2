@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:lab2"
         Icon="1111.jpg"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Локальная база данных УБИ" Height="675" Width="1200" Loaded="Window_Loaded">
     <Grid>
         <DataGrid x:Name="dgLocal" FontSize="12" Margin ="10,30,10,10" AutoGenerateColumns="False" MouseDoubleClick="dgLocal_MouseDoubleClick">

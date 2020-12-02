@@ -69,35 +69,42 @@ namespace lab2
 
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // MessageBox.Show("/"+ComboBox1.SelectedIndex+"/");
-            // Window1 w1 = new Window1(n, list);
-            // bool b = false;
-            // if (ComboBox1.SelectedIndex == 0 && n != 15)
-            // {
-            //     n = 15;
-            //     w1.ListBox.SelectedIndex = 0;
-            //     b = true;
-            // } else
-            //
-            // if (ComboBox1.SelectionBoxItemStringFormat == "30" && n != 30)
-            // {
-            //     n = 30;
-            //     w1.ListBox.SelectedIndex = 1;
-            //     b = true;
-            // } else
-            //
-            // if (ComboBox1.SelectionBoxItemStringFormat == "45" && n != 45)
-            // {
-            //     n = 45;
-            //     w1.ListBox.SelectedIndex = 2;
-            //     b = true;
-            // }
-            //
-            // if (b)
-            // {
-            //     w1.Show();
-            //     this.Close();
-            // }
+            ComboBox comboBox = (ComboBox)sender;
+            ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+            var i = int.Parse(selectedItem.Content.ToString());
+            if (n != i && (list - 1) * i < items.Count)
+            {
+                Window1 w1 = new Window1(i, list);
+                w1.Show();
+                this.Close();
+            }
+            else
+            {
+                Window1 w1 = new Window1(1000, 1);
+                w1.Show();
+                this.Close();
+            }
+        }
+
+        private void TextBlock1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int x;
+            TextBox textBox = (TextBox)sender;
+            if (int.TryParse(textBox.Text, out x))
+            {
+                if (list != x && (x-1)*n<items.Count)
+                {
+                    Window1 w1 = new Window1(n, x);
+                    w1.Show();
+                    this.Close();
+                }
+                else
+                {
+                    TextBlock1.Text = $"{list}";
+                }
+
+            }
+            else TextBlock1.Text = $"{list}";
         }
     }
 }
