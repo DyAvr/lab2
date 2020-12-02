@@ -99,14 +99,28 @@ namespace lab2
 
         private void DeserializeDB()
         {
-            using (var reader = File.OpenText("..\\..\\threatsData.txt"))
+            try
             {
-                threatsData = JsonConvert.DeserializeObject<BindingList<Threat>>(reader.ReadToEnd());
+                using (var reader = File.OpenText("..\\..\\threatsData.txt"))
+                {
+                    threatsData = JsonConvert.DeserializeObject<BindingList<Threat>>(reader.ReadToEnd());
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Ошибка", e.Message);
             }
 
-            using (var reader = File.OpenText("..\\..\\updateTime.txt"))
+            try
             {
-                updateTime = JsonConvert.DeserializeObject<DateTime>(reader.ReadToEnd());
+                using (var reader = File.OpenText("..\\..\\updateTime.txt"))
+                {
+                    updateTime = JsonConvert.DeserializeObject<DateTime>(reader.ReadToEnd());
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Ошибка", e.Message);
             }
             
         }
